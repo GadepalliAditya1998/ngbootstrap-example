@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample';
+  checkModel = { left: true, middle: true, right: true };
 }

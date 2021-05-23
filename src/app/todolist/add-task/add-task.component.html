@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add Task</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div>
+        <label>Task name</label>
+        <input class="form-control" type="text" placeholder="Name of Task" aria-label="Task name"
+            [(ngModel)]="task.name">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Cancel</button>
+    <button type="button" class="btn btn-primary" [disabled]="!isValid" (click)="onAddTask()">Add</button>
+</div>

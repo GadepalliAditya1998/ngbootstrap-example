@@ -1,0 +1,18 @@
+<alert type="info" *ngIf="tasks && tasks.length === 0">
+    No Tasks added! Please <a (click)="openAddTaskModal()" class="alert-link">click here</a> to create
+    a task.
+</alert>
+<div *ngIf="tasks && tasks.length > 0">
+    <div class="d-flex justify-content-between align-items-center">
+        <h6>Your Tasks</h6>
+        <button type="button" class="btn btn-primary margin-y-15" (click)="openAddTaskModal()">Add Task</button>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let task of tasks">
+            <div class="d-flex justify-content-between align-items-center">
+                <label class="margin-clear">{{task.name}}</label>
+                <label class="margin-clear">Created on: {{task.createdOn | date: 'dd-MMM-yyyy'}}</label>
+            </div>
+        </li>
+    </ul>
+</div>
